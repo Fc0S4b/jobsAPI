@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide name'],
     minlength: 6,
-    maxlength: 12,
+    // maxlength: 12, hash es mayor que 12
   },
 });
 
