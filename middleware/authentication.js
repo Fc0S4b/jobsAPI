@@ -13,6 +13,12 @@ const auth = async (req, res, next) => {
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
     // attach the user to the job router
+
+    // alternative code
+    // const user = User.findById(payload.id).select('-password'); //-password es para remove password
+    // req.user = user
+
+    // si usas forma alternativa, este req.user debes sacarlo
     req.user = { userId: payload.userId, name: payload.name };
     next();
   } catch (error) {
