@@ -22,7 +22,7 @@ const JobSchema = new mongoose.Schema(
       require: [true, 'Please provide user'],
     },
   },
-  { timestamps: true }
+  { timestamps: true } //timestamps le dice a mongoose que automáticamente administre, cree y actualize las propiedades en los documentos
 );
 
 module.exports = mongoose.model('Job', JobSchema);
